@@ -26,7 +26,7 @@ function menu() {
     } 
     if (choice === 2) {
         const choiceCategory = parseFloat(prompt("What was your expense? Choose from: food, rent, shopping"));
-        const inputExpense = parseFloat(prompt("How much was your expense?"))
+        const inputExpense = parseFloat(prompt("How much was your expense?"));
         //choose category
         //Add expense
     }
@@ -37,7 +37,7 @@ function menu() {
         // Get summary
     }
     else {
-        emptyAlert = alert("Invalid input")
+        emptyAlert = alert("Invalid input");
     }
 }
 menu();
