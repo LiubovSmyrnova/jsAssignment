@@ -7,7 +7,9 @@ const account = {
        rent: [],
        shopping: [],
        income: [],
-
+    listAllExpenses: function () {
+        alert(`Expenses for food: ${this.food}` + `\n` + `Expenses for rent: ${this.rent}` + `\n` + `Expenses for shopping: ${this.shopping}`);
+    }
     }
     
     // an array that should hold all of your expenses, can be empty from start
@@ -30,24 +32,24 @@ function menu() {
 
     if (choice === 1) {
         //account.getName();
-        const inputIncome = parseFloat(prompt("{How much was your income?"))
-        account.income.push(inputIncome);
+        const addIncome = parseFloat(prompt("{How much was your income?"))
+        account.income.push(addIncome);
         console.log(account.income);
     } 
     if (choice === 2) {
         const choiceCategory = prompt("What was your expense? Choose from: food, rent, shopping");
         
         if (choiceCategory === "food") {
-            let inputExpense = prompt("Enter an amount");
+            let inputExpense = parseFloat(prompt("Enter an amount"));
             account.food.push(inputExpense);
             console.log(account.food);
         }
         if (choiceCategory === "rent") {
-            let inputExpenseRent = prompt("Enter an amount");
+            let inputExpenseRent = parseFloat(prompt("Enter an amount"));
             account.rent.push(inputExpenseRent);
         }
         if (choiceCategory === "shopping") {
-            let inputExpenseShop = prompt("Enter an amount");
+            let inputExpenseShop = parseFloat(prompt("Enter an amount"));
             account.shopping.push(inputExpenseShop);    
         }
     
@@ -56,6 +58,7 @@ function menu() {
         //Add expense
     }
     if (choice === 3) {
+        account.listAllExpenses();
         // List all expenses
     }
     if (choice === 4) {
