@@ -28,28 +28,31 @@ const account = {
 
 
 function menu() {
-    const choice = parseFloat(prompt("Please choose between 1) Add income 2)Add expense 3)List all expenses 4)Get summary"));
-
+    while (true) {
+    const choice = parseFloat(prompt("Please choose between 1) Add income 2)Add expense 3)List all expenses 4)Get summary 5)Exit"));
+    if (choice === 5) {break};
     if (choice === 1) {
         //account.getName();
         const addIncome = parseFloat(prompt("{How much was your income?"))
         account.income.push(addIncome);
         console.log(account.income);
+
     } 
     if (choice === 2) {
         const choiceCategory = prompt("What was your expense? Choose from: food, rent, shopping");
         
         if (choiceCategory === "food") {
-            let inputExpense = parseFloat(prompt("Enter an amount"));
+            let inputExpense = parseFloat(prompt("Enter an amount:"));
             account.food.push(inputExpense);
             console.log(account.food);
+            
         }
         if (choiceCategory === "rent") {
-            let inputExpenseRent = parseFloat(prompt("Enter an amount"));
+            let inputExpenseRent = parseFloat(prompt("Enter an amount:"));
             account.rent.push(inputExpenseRent);
         }
         if (choiceCategory === "shopping") {
-            let inputExpenseShop = parseFloat(prompt("Enter an amount"));
+            let inputExpenseShop = parseFloat(prompt("Enter an amount:"));
             account.shopping.push(inputExpenseShop);    
         }
     
@@ -68,5 +71,5 @@ function menu() {
         //emptyAlert = alert("Invalid input");
     //}
 }
-
+}
 menu();
