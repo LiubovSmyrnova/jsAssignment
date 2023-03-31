@@ -8,7 +8,6 @@ const account = {
     shopping: [],
     income: [],
     addIncome: function () {
-      //const addIncome
       const income = parseFloat(prompt("{How much was your income?"));
       this.income.push(income);
       menu();
@@ -17,10 +16,24 @@ const account = {
       const expenseType = prompt(
         "What was your expense? For example food, rent, shopping"
       );
+
+      if (expenseType === "" || expenseType === null) {
+        // The input is empty or null
+        alert("Please enter a valid expense category");
+      const expenseType = prompt(
+        "What was your expense? For example food, rent, shopping"
+      );
+    }
       // this is a good place for some error handling
       // you can check if the user input is valid before you move on
       // and you can do this with an if statement
-      const expenseAmount = prompt("How much was your expense?");
+      const expenseAmount = parseFloat(prompt("How much was your expense?"));
+      
+      if (expenseAmount === "" || expenseAmount === null) {
+        // The input is empty or null
+        alert("Please enter a valid expense category");
+        const expenseAmount = prompt("How much was your expense?");
+    }
       // same as above, error handle here
   
       this.expenses.push({ expenseType, expenseAmount });
@@ -41,6 +54,7 @@ const account = {
       menu();
     },
     getSummary: function () {
+
       // you need one variabel for saving the total income
       // and one variable for saving the totalExpense
       // after that you need loop through the income array and add all incomes together
