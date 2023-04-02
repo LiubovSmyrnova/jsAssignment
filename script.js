@@ -1,11 +1,11 @@
 const account = {
-    name: "Liubov",
+    //name: "Liubov",
     //getName: function() {
     //alert(`Account name: ${this.name}`);
     expenses: [],
-    food: [],
-    rent: [],
-    shopping: [],
+    //food: [],
+    //rent: [],
+    //shopping: [],
     income: [],
     addIncome: function () {
       const income = parseFloat(prompt("{How much was your income?"));
@@ -62,12 +62,13 @@ const account = {
         totalIncome += this.income[i];
       }
       
-
       let totalExpense = 0;
       for (let i = 0; i < this.expenses.length; i++) {
         totalExpense += this.expenses[i].expenseAmount;
       }
-      alert("Your total income is:" + totalIncome + "Your total expense is:" + totalExpense);
+
+      const balance = totalIncome - totalExpense;
+      alert("Your total income is:" + totalIncome + "Your total expense is:" + totalExpense + "Your balance is:" + balance);
       menu();
       // you need one variabel for saving the total income
       // and one variable for saving the totalExpense
