@@ -57,12 +57,17 @@ const account = {
 
     getSummary: function () {
 
-      let totalIncome = "";
-      this.income.forEach(function(incomes) {
-        totalIncome +=
-          "Total income:" + incomes + " ";
-      });
-      alert(totalIncome);
+      let totalIncome = 0;
+      for (let i = 0; i < this.income.length; i++) {
+        totalIncome += this.income[i];
+      }
+      
+
+      let totalExpense = 0;
+      for (let i = 0; i < this.expenses.length; i++) {
+        totalExpense += this.expenses[i].expenseAmount;
+      }
+      alert("Your total income is:" + totalIncome + "Your total expense is:" + totalExpense);
       menu();
       // you need one variabel for saving the total income
       // and one variable for saving the totalExpense
